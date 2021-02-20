@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.news.ui.main.MainFragment"
+        tools:layout="@layout/main_fragment">
+
+        <action
+            android:id="@+id/action_main_to_newsDetail"
+            app:destination="@id/newsDetail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsDetail"
+        android:name="com.example.news.ui.news_detail.NewsDetailFragment"
+        android:label="NewsDetailFragment"
+        tools:layout="@layout/news_detail_fragment">
+        <argument
+            android:name="rssItem"
+            android:defaultValue="@null"
+            app:argType="com.example.news.model.RssItem"
+            app:nullable="true" />
+    </fragment>
+</navigation>
